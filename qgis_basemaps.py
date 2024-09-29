@@ -137,7 +137,7 @@ sources.append(['connections-xyz', 'Bing VirtualEarth', '', '', 'Microsoft', 'ht
 for source in sources:
     connectionType = source[0]
     connectionName = source[1]
-    
+
     QSettings().setValue(f"qgis/{connectionType}/{connectionName}/authcfg", source[2])
     QSettings().setValue(f"qgis/{connectionType}/{connectionName}/password", source[3])
     QSettings().setValue(f"qgis/{connectionType}/{connectionName}/referer", source[4])
