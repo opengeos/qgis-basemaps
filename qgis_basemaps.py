@@ -92,21 +92,6 @@ sources.append(['connections-xyz', 'OpenStreetMap.HOT', '', '', '(C) OpenStreetM
 sources.append(['connections-xyz', 'OpenStreetMap.Mapnik', '', '', '(C) OpenStreetMap contributors', 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', '', '30', '0'])
 sources.append(['connections-xyz', 'OpenTopoMap', '', '', 'Map data: (C) OpenStreetMap contributors, SRTM | M', 'https://a.tile.opentopomap.org/{z}/{x}/{y}.png', '', '30', '0'])
 sources.append(['connections-xyz', 'SafeCast', '', '', 'Map data: (C) OpenStreetMap contributors | Map sty', 'https://s3.amazonaws.com/te512.safecast.org/{z}/{x}/{y}.png', '', '30', '0'])
-sources.append(['connections-xyz', 'Stadia.AlidadeSatellite', '', '', '(C) CNES, Distribution Airbus DS, © Airbus DS, © P', 'https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}.jpg', '', '30', '0'])
-sources.append(['connections-xyz', 'Stadia.AlidadeSmooth', '', '', '(C) Stadia Maps (C) OpenMapTiles (C) OpenStreetMap', 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png', '', '30', '0'])
-sources.append(['connections-xyz', 'Stadia.AlidadeSmoothDark', '', '', '(C) Stadia Maps (C) OpenMapTiles (C) OpenStreetMap', 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}.png', '', '30', '0'])
-sources.append(['connections-xyz', 'Stadia.OSMBright', '', '', '(C) Stadia Maps (C) OpenMapTiles (C) OpenStreetMap', 'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}.png', '', '30', '0'])
-sources.append(['connections-xyz', 'Stadia.Outdoors', '', '', '(C) Stadia Maps (C) OpenMapTiles (C) OpenStreetMap', 'https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}.png', '', '30', '0'])
-sources.append(['connections-xyz', 'Stadia.StamenTerrain', '', '', '(C) Stadia Maps (C) Stamen Design (C) OpenMapTiles', 'https://tiles.stadiamaps.com/tiles/stamen_terrain/{z}/{x}/{y}.png', '', '30', '0'])
-sources.append(['connections-xyz', 'Stadia.StamenTerrainBackground', '', '', '(C) Stadia Maps (C) Stamen Design (C) OpenMapTiles', 'https://tiles.stadiamaps.com/tiles/stamen_terrain_background/{z}/{x}/{y}.png', '', '30', '0'])
-sources.append(['connections-xyz', 'Stadia.StamenTerrainLabels', '', '', '(C) Stadia Maps (C) Stamen Design (C) OpenMapTiles', 'https://tiles.stadiamaps.com/tiles/stamen_terrain_labels/{z}/{x}/{y}.png', '', '30', '0'])
-sources.append(['connections-xyz', 'Stadia.StamenTerrainLines', '', '', '(C) Stadia Maps (C) Stamen Design (C) OpenMapTiles', 'https://tiles.stadiamaps.com/tiles/stamen_terrain_lines/{z}/{x}/{y}.png', '', '30', '0'])
-sources.append(['connections-xyz', 'Stadia.StamenToner', '', '', '(C) Stadia Maps (C) Stamen Design (C) OpenMapTiles', 'https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}.png', '', '30', '0'])
-sources.append(['connections-xyz', 'Stadia.StamenTonerBackground', '', '', '(C) Stadia Maps (C) Stamen Design (C) OpenMapTiles', 'https://tiles.stadiamaps.com/tiles/stamen_toner_background/{z}/{x}/{y}.png', '', '30', '0'])
-sources.append(['connections-xyz', 'Stadia.StamenTonerLabels', '', '', '(C) Stadia Maps (C) Stamen Design (C) OpenMapTiles', 'https://tiles.stadiamaps.com/tiles/stamen_toner_labels/{z}/{x}/{y}.png', '', '30', '0'])
-sources.append(['connections-xyz', 'Stadia.StamenTonerLines', '', '', '(C) Stadia Maps (C) Stamen Design (C) OpenMapTiles', 'https://tiles.stadiamaps.com/tiles/stamen_toner_lines/{z}/{x}/{y}.png', '', '30', '0'])
-sources.append(['connections-xyz', 'Stadia.StamenTonerLite', '', '', '(C) Stadia Maps (C) Stamen Design (C) OpenMapTiles', 'https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}.png', '', '30', '0'])
-sources.append(['connections-xyz', 'Stadia.StamenWatercolor', '', '', '(C) Stadia Maps (C) Stamen Design (C) OpenMapTiles', 'https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg', '', '30', '0'])
 sources.append(['connections-xyz', 'Strava.All', '', '', 'Map tiles by <a href="https://labs.strava.com/heat', 'https://heatmap-external-a.strava.com/tiles/all/hot/{z}/{x}/{y}.png', '', '30', '0'])
 sources.append(['connections-xyz', 'Strava.Ride', '', '', 'Map tiles by <a href="https://labs.strava.com/heat', 'https://heatmap-external-a.strava.com/tiles/ride/hot/{z}/{x}/{y}.png', '', '30', '0'])
 sources.append(['connections-xyz', 'Strava.Run', '', '', 'Map tiles by <a href="https://labs.strava.com/heat', 'https://heatmap-external-a.strava.com/tiles/run/bluered/{z}/{x}/{y}.png', '', '30', '0'])
@@ -137,7 +122,7 @@ sources.append(['connections-xyz', 'Bing VirtualEarth', '', '', 'Microsoft', 'ht
 for source in sources:
     connectionType = source[0]
     connectionName = source[1]
-
+    
     QSettings().setValue(f"qgis/{connectionType}/{connectionName}/authcfg", source[2])
     QSettings().setValue(f"qgis/{connectionType}/{connectionName}/password", source[3])
     QSettings().setValue(f"qgis/{connectionType}/{connectionName}/referer", source[4])
