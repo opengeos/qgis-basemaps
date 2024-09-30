@@ -122,7 +122,7 @@ sources.append(['connections-xyz', 'Bing VirtualEarth', '', '', 'Microsoft', 'ht
 for source in sources:
     connectionType = source[0]
     connectionName = source[1]
-    
+
     QSettings().setValue(f"qgis/{connectionType}/{connectionName}/authcfg", source[2])
     QSettings().setValue(f"qgis/{connectionType}/{connectionName}/password", source[3])
     QSettings().setValue(f"qgis/{connectionType}/{connectionName}/referer", source[4])
@@ -132,3 +132,5 @@ for source in sources:
     QSettings().setValue(f"qgis/{connectionType}/{connectionName}/zmin", source[8])
 
 iface.reloadConnections()
+
+print("All basemaps have been added. Please restart QGIS.")

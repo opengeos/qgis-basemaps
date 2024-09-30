@@ -8,3 +8,7 @@
 4. Restart QGIS to see the new basemaps in the _XYZ Tiles_ section of the _Browser Panel_.
 
 ![image](https://github.com/user-attachments/assets/90062fa8-ab18-4e9e-9724-8c7bbdbb1f4b)
+
+## Video Tutorial
+
+[![YouTube](https://img.youtube.com/vi/yyOPIA8Gwlg/0.jpg)](https://youtu.be/yyOPIA8Gwlg)
