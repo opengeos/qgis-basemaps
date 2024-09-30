@@ -132,3 +132,5 @@ for source in sources:
     QSettings().setValue(f"qgis/{connectionType}/{connectionName}/zmin", source[8])
 
 iface.reloadConnections()
+
+print("All basemaps have been added. Please restart QGIS.")
