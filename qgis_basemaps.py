@@ -1,12 +1,14 @@
 
 # This script is inspired by Klas Karlsson at https://bit.ly/4eDbx1O. Credit to Klas Karlsson.
-# I expaned the script to include more basemaps from xyzservices
+# I expaned the script to include more XYZ basemaps from xyzservices and a lot of WMS basemaps.
 
 
 from qgis.PyQt.QtCore import QSettings
 from qgis.utils import iface
+print('Adding basemaps to QGIS now. Please wait ...')
 
 sources = []
+sources.append(['connections-xyz', 'Bing VirtualEarth', '', '', 'Microsoft', 'http://ecn.t3.tiles.virtualearth.net/tiles/a{q}.jpeg?g=1', '', '30', '1'])
 sources.append(['connections-xyz', 'OpenStreetMap', '', '', 'OpenStreetMap', 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', '', '30', '0'])
 sources.append(['connections-xyz', 'Google Maps', '', '', 'Google', 'https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', '', '30', '0'])
 sources.append(['connections-xyz', 'Google Satellite', '', '', 'Google', 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', '', '30', '0'])
@@ -30,6 +32,7 @@ sources.append(['connections-xyz', 'Esri.AntarcticImagery', '', '', 'Earthstar G
 sources.append(['connections-xyz', 'Esri.ArcticImagery', '', '', 'Earthstar Geographics', 'http://server.arcgisonline.com/ArcGIS/rest/services/Polar/Arctic_Imagery/MapServer/tile/{z}/{y}/{x}', '', '30', '0'])
 sources.append(['connections-xyz', 'Esri.ArcticOceanBase', '', '', 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, T', 'http://server.arcgisonline.com/ArcGIS/rest/services/Polar/Arctic_Ocean_Base/MapServer/tile/{z}/{y}/{x}', '', '30', '0'])
 sources.append(['connections-xyz', 'Esri.ArcticOceanReference', '', '', 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, T', 'http://server.arcgisonline.com/ArcGIS/rest/services/Polar/Arctic_Ocean_Reference/MapServer/tile/{z}/{y}/{x}', '', '30', '0'])
+sources.append(['connections-xyz', 'Esri.DeLorme', '', '', 'Tiles (C) Esri -- Copyright: (C)2012 DeLorme', 'https://server.arcgisonline.com/ArcGIS/rest/services/Specialty/DeLorme_World_Base_Map/MapServer/tile/{z}/{y}/{x}', '', '30', '0'])
 sources.append(['connections-xyz', 'Esri.NatGeoWorldMap', '', '', 'Tiles (C) Esri -- National Geographic, Esri, DeLor', 'https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', '', '30', '0'])
 sources.append(['connections-xyz', 'Esri.OceanBasemap', '', '', 'Tiles (C) Esri -- Sources: GEBCO, NOAA, CHS, OSU, ', 'https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Base/MapServer/tile/{z}/{y}/{x}', '', '30', '0'])
 sources.append(['connections-xyz', 'Esri.WorldGrayCanvas', '', '', 'Tiles (C) Esri -- Esri, DeLorme, NAVTEQ', 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', '', '30', '0'])
@@ -55,7 +58,6 @@ sources.append(['connections-xyz', 'JusticeMap.plurality', '', '', 'Justice Map'
 sources.append(['connections-xyz', 'JusticeMap.white', '', '', 'Justice Map', 'https://www.justicemap.org/tile/county/white/{z}/{x}/{y}.png', '', '30', '0'])
 sources.append(['connections-xyz', 'MtbMap', '', '', '(C) OpenStreetMap contributors & USGS', 'http://tile.mtbmap.cz/mtbmap_tiles/{z}/{x}/{y}.png', '', '30', '0'])
 sources.append(['connections-xyz', 'NASAGIBS.ASTER_GDEM_Greyscale_Shaded_Relief', '', '', 'Imagery provided by services from the Global Image', 'https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/ASTER_GDEM_Greyscale_Shaded_Relief/default/GoogleMapsCompatible_Level12/{z}/{y}/{x}.jpg', '', '30', '0'])
-sources.append(['connections-xyz', 'NASAGIBS.BlueMarble', '', '', 'Imagery provided by services from the Global Image', 'https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/BlueMarble_NextGeneration/default/GoogleMapsCompatible_Level8/{z}/{y}/{x}.jpeg', '', '30', '0'])
 sources.append(['connections-xyz', 'NASAGIBS.BlueMarble3031', '', '', 'Imagery provided by services from the Global Image', 'https://gibs.earthdata.nasa.gov/wmts/epsg3031/best/BlueMarble_NextGeneration/default/500m/{z}/{y}/{x}.jpeg', '', '30', '0'])
 sources.append(['connections-xyz', 'NASAGIBS.BlueMarble3413', '', '', 'Imagery provided by services from the Global Image', 'https://gibs.earthdata.nasa.gov/wmts/epsg3413/best/BlueMarble_NextGeneration/default/500m/{z}/{y}/{x}.jpeg', '', '30', '0'])
 sources.append(['connections-xyz', 'NASAGIBS.BlueMarbleBathymetry3031', '', '', 'Imagery provided by services from the Global Image', 'https://gibs.earthdata.nasa.gov/wmts/epsg3031/best/BlueMarble_ShadedRelief_Bathymetry/default/500m/{z}/{y}/{x}.jpeg', '', '30', '0'])
@@ -117,19 +119,62 @@ sources.append(['connections-xyz', 'nlmaps.luchtfoto', '', '', 'Kaartgegevens (C
 sources.append(['connections-xyz', 'nlmaps.pastel', '', '', 'Kaartgegevens (C) Kadaster', 'https://service.pdok.nl/brt/achtergrondkaart/wmts/v2_0/pastel/EPSG:3857/{z}/{x}/{y}.png', '', '30', '0'])
 sources.append(['connections-xyz', 'nlmaps.standaard', '', '', 'Kaartgegevens (C) Kadaster', 'https://service.pdok.nl/brt/achtergrondkaart/wmts/v2_0/standaard/EPSG:3857/{z}/{x}/{y}.png', '', '30', '0'])
 sources.append(['connections-xyz', 'nlmaps.water', '', '', 'Kaartgegevens (C) Kadaster', 'https://service.pdok.nl/brt/achtergrondkaart/wmts/v2_0/water/EPSG:3857/{z}/{x}/{y}.png', '', '30', '0'])
-sources.append(['connections-xyz', 'Bing VirtualEarth', '', '', 'Microsoft', 'http://ecn.t3.tiles.virtualearth.net/tiles/a{q}.jpeg?g=1', '', '30', '1'])
+sources.append(['connections-wms', 'USGS 3DEP Elevation', 'https://elevation.nationalmap.gov/arcgis/services/3DEPElevation/ImageServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS 3DEP Elevation Index', 'https://index.nationalmap.gov/arcgis/services/3DEPElevationIndex/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS Base Map', 'https://basemap.nationalmap.gov/arcgis/services/USGSTNMBlank/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS Hydrography', 'https://basemap.nationalmap.gov/arcgis/services/USGSHydroCached/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS Imagery Topo Base Map', 'https://basemap.nationalmap.gov/arcgis/services/USGSImageryTopo/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS ImageryOnly Base Map', 'https://basemap.nationalmap.gov/arcgis/services/USGSImageryOnly/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS Shaded Relief', 'https://basemap.nationalmap.gov/arcgis/services/USGSShadedReliefOnly/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS NAIP Imagery', 'https://imagery.nationalmap.gov/arcgis/services/USGSNAIPImagery/ImageServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS Topo Base Map', 'https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS Topo Availability', 'https://index.nationalmap.gov/arcgis/services/USTopoAvailability/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS Contours', 'https://carto.nationalmap.gov/arcgis/services/contours/MapServer/WMSServer?', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS Geographic Names (GNIS)', 'https://carto.nationalmap.gov/arcgis/services/geonames/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS Governmental Unit Boundaries', 'https://carto.nationalmap.gov/arcgis/services/govunits/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS Imagery (NAIP Plus)', 'https://imagery.nationalmap.gov/arcgis/services/USGSNAIPPlus/ImageServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS Imagery - NAIP 4 Band', 'https://imagery.nationalmap.gov/arcgis/services/USGSNAIPImagery/ImageServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS Map Indices', 'https://carto.nationalmap.gov/arcgis/services/map_indices/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS NHDPlus High Resolution', 'https://hydro.nationalmap.gov/arcgis/services/NHDPlus_HR/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS National Hydrography Dataset', 'https://hydro.nationalmap.gov/arcgis/services/nhd/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS Reference Polygons', 'https://carto.nationalmap.gov/arcgis/services/selectable_polygons/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS Special Edition 250k Maps', 'https://index.nationalmap.gov/arcgis/services/USGS_250K_Special_Edition_Maps/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS Structures', 'https://carto.nationalmap.gov/arcgis/services/structures/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS Transportation', 'https://carto.nationalmap.gov/arcgis/services/transportation/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS 3D Hydrography Program (3DHP)', 'https://hydro.nationalmap.gov/arcgis/services/3DHP_all/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS Watershed Boundary Dataset', 'https://hydro.nationalmap.gov/arcgis/services/wbd/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'BLM Public Land Survey System (PLSS)', 'https://gis.blm.gov/arcgis/services/Cadastral/BLM_Natl_PLSS_CadNSDI/MapServer/WMSServer', 'BLM', '30', '0'])
+sources.append(['connections-wms', 'FWS Wetlands', 'https://www.fws.gov/wetlandsmapservice/services/Wetlands/MapServer/WMSServer', 'FWS', '30', '0'])
+sources.append(['connections-wms', 'USGS Protected Area Fee Manager (PADUS)', 'https://gis1.usgs.gov/arcgis/services/padus3/Fee_Managers/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS Protected Area GAP Status (PADUS)', 'https://gis1.usgs.gov/arcgis/services/padus3/Protection_Status_by_GAP_Status_Code/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS Protected Area Manager Type (PADUS)', 'https://gis1.usgs.gov/arcgis/services/padus3/Manager_Type/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'USGS Trails', 'https://partnerships.nationalmap.gov/arcgis/services/USGSTrails/MapServer/WMSServer', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'NLCD Canopy Cover', 'https://www.mrlc.gov/geoserver/NLCD_Canopy/wms', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'NLCD Impervious Descriptor', 'https://www.mrlc.gov/geoserver/NLCD_Impervious_Descriptor/wms', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'NLCD Imperviousness', 'https://www.mrlc.gov/geoserver/NLCD_Impervious/wms', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'NLCD Land Cover', 'https://www.mrlc.gov/geoserver/NLCD_Land_Cover/wms', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'NLCD Shrublands', 'https://www.mrlc.gov/geoserver/NLCD_Shrubland/wms', 'USGS', '30', '0'])
+sources.append(['connections-wms', 'EOX Maps', 'https://tiles.maps.eox.at/wms', 'EOX', '30', '0'])
+sources.append(['connections-wms', 'Terrascope', 'https://services.terrascope.be/wms/v2', 'Terrascope', '30', '0'])
 
 for source in sources:
     connectionType = source[0]
     connectionName = source[1]
 
-    QSettings().setValue(f"qgis/{connectionType}/{connectionName}/authcfg", source[2])
-    QSettings().setValue(f"qgis/{connectionType}/{connectionName}/password", source[3])
-    QSettings().setValue(f"qgis/{connectionType}/{connectionName}/referer", source[4])
-    QSettings().setValue(f"qgis/{connectionType}/{connectionName}/url", source[5])
-    QSettings().setValue(f"qgis/{connectionType}/{connectionName}/username", source[6])
-    QSettings().setValue(f"qgis/{connectionType}/{connectionName}/zmax", source[7])
-    QSettings().setValue(f"qgis/{connectionType}/{connectionName}/zmin", source[8])
+    if connectionType == "connections-xyz":
+        QSettings().setValue(f"qgis/{connectionType}/{connectionName}/authcfg", source[2])
+        QSettings().setValue(f"qgis/{connectionType}/{connectionName}/password", source[3])
+        QSettings().setValue(f"qgis/{connectionType}/{connectionName}/referer", source[4])
+        QSettings().setValue(f"qgis/{connectionType}/{connectionName}/url", source[5])
+        QSettings().setValue(f"qgis/{connectionType}/{connectionName}/username", source[6])
+        QSettings().setValue(f"qgis/{connectionType}/{connectionName}/zmax", source[7])
+        QSettings().setValue(f"qgis/{connectionType}/{connectionName}/zmin", source[8])
+    elif connectionType == "connections-wms":
+        QSettings().setValue(f"qgis/{connectionType}/{connectionName}/url", source[2])
+        QSettings().setValue(f"qgis/{connectionType}/{connectionName}/referer", source[3])
+        QSettings().setValue(f"qgis/{connectionType}/{connectionName}/zmax", source[4])
+        QSettings().setValue(f"qgis/{connectionType}/{connectionName}/zmin", source[5])
+
 
 iface.reloadConnections()
 
