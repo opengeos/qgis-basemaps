@@ -1,0 +1,38 @@
+name,url,referer,zmax,zmin
+USGS 3DEP Elevation,https://elevation.nationalmap.gov/arcgis/services/3DEPElevation/ImageServer/WMSServer,USGS,30,0
+USGS 3DEP Elevation Index,https://index.nationalmap.gov/arcgis/services/3DEPElevationIndex/MapServer/WMSServer,USGS,30,0
+USGS Base Map,https://basemap.nationalmap.gov/arcgis/services/USGSTNMBlank/MapServer/WMSServer,USGS,30,0
+USGS Hydrography,https://basemap.nationalmap.gov/arcgis/services/USGSHydroCached/MapServer/WMSServer,USGS,30,0
+USGS Imagery Topo Base Map,https://basemap.nationalmap.gov/arcgis/services/USGSImageryTopo/MapServer/WMSServer,USGS,30,0
+USGS ImageryOnly Base Map,https://basemap.nationalmap.gov/arcgis/services/USGSImageryOnly/MapServer/WMSServer,USGS,30,0
+USGS Shaded Relief,https://basemap.nationalmap.gov/arcgis/services/USGSShadedReliefOnly/MapServer/WMSServer,USGS,30,0
+USGS NAIP Imagery,https://imagery.nationalmap.gov/arcgis/services/USGSNAIPImagery/ImageServer/WMSServer,USGS,30,0
+USGS Topo Base Map,https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WMSServer,USGS,30,0
+USGS Topo Availability,https://index.nationalmap.gov/arcgis/services/USTopoAvailability/MapServer/WMSServer,USGS,30,0
+USGS Contours,https://carto.nationalmap.gov/arcgis/services/contours/MapServer/WMSServer?,USGS,30,0
+USGS Geographic Names (GNIS),https://carto.nationalmap.gov/arcgis/services/geonames/MapServer/WMSServer,USGS,30,0
+USGS Governmental Unit Boundaries,https://carto.nationalmap.gov/arcgis/services/govunits/MapServer/WMSServer,USGS,30,0
+USGS Imagery (NAIP Plus),https://imagery.nationalmap.gov/arcgis/services/USGSNAIPPlus/ImageServer/WMSServer,USGS,30,0
+USGS Imagery - NAIP 4 Band,https://imagery.nationalmap.gov/arcgis/services/USGSNAIPImagery/ImageServer/WMSServer,USGS,30,0
+USGS Map Indices,https://carto.nationalmap.gov/arcgis/services/map_indices/MapServer/WMSServer,USGS,30,0
+USGS NHDPlus High Resolution,https://hydro.nationalmap.gov/arcgis/services/NHDPlus_HR/MapServer/WMSServer,USGS,30,0
+USGS National Hydrography Dataset,https://hydro.nationalmap.gov/arcgis/services/nhd/MapServer/WMSServer,USGS,30,0
+USGS Reference Polygons,https://carto.nationalmap.gov/arcgis/services/selectable_polygons/MapServer/WMSServer,USGS,30,0
+USGS Special Edition 250k Maps,https://index.nationalmap.gov/arcgis/services/USGS_250K_Special_Edition_Maps/MapServer/WMSServer,USGS,30,0
+USGS Structures,https://carto.nationalmap.gov/arcgis/services/structures/MapServer/WMSServer,USGS,30,0
+USGS Transportation,https://carto.nationalmap.gov/arcgis/services/transportation/MapServer/WMSServer,USGS,30,0
+USGS 3D Hydrography Program (3DHP),https://hydro.nationalmap.gov/arcgis/services/3DHP_all/MapServer/WMSServer,USGS,30,0
+USGS Watershed Boundary Dataset,https://hydro.nationalmap.gov/arcgis/services/wbd/MapServer/WMSServer,USGS,30,0
+BLM Public Land Survey System (PLSS),https://gis.blm.gov/arcgis/services/Cadastral/BLM_Natl_PLSS_CadNSDI/MapServer/WMSServer,BLM,30,0
+FWS Wetlands,https://www.fws.gov/wetlandsmapservice/services/Wetlands/MapServer/WMSServer,FWS,30,0
+USGS Protected Area Fee Manager (PADUS),https://gis1.usgs.gov/arcgis/services/padus3/Fee_Managers/MapServer/WMSServer,USGS,30,0
+USGS Protected Area GAP Status (PADUS),https://gis1.usgs.gov/arcgis/services/padus3/Protection_Status_by_GAP_Status_Code/MapServer/WMSServer,USGS,30,0
+USGS Protected Area Manager Type (PADUS),https://gis1.usgs.gov/arcgis/services/padus3/Manager_Type/MapServer/WMSServer,USGS,30,0
+USGS Trails,https://partnerships.nationalmap.gov/arcgis/services/USGSTrails/MapServer/WMSServer,USGS,30,0
+NLCD Canopy Cover,https://www.mrlc.gov/geoserver/NLCD_Canopy/wms,USGS,30,0
+NLCD Impervious Descriptor,https://www.mrlc.gov/geoserver/NLCD_Impervious_Descriptor/wms,USGS,30,0
+NLCD Imperviousness,https://www.mrlc.gov/geoserver/NLCD_Impervious/wms,USGS,30,0
+NLCD Land Cover,https://www.mrlc.gov/geoserver/NLCD_Land_Cover/wms,USGS,30,0
+NLCD Shrublands,https://www.mrlc.gov/geoserver/NLCD_Shrubland/wms,USGS,30,0
+EOX Maps,https://tiles.maps.eox.at/wms,EOX,30,0
+Terrascope,https://services.terrascope.be/wms/v2,Terrascope,30,0
