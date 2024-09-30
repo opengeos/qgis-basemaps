@@ -12,3 +12,5 @@
 ## Video Tutorial
 
 [![YouTube](https://img.youtube.com/vi/yyOPIA8Gwlg/0.jpg)](https://youtu.be/yyOPIA8Gwlg)
+
+[![YouTube](https://img.youtube.com/vi/HpKvAxCKoDg/0.jpg)](https://youtu.be/HpKvAxCKoDg)
