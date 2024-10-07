@@ -161,7 +161,7 @@ sources.append(['connections-wms', 'NASA GIBS WMS', 'https://gibs.earthdata.nasa
 for source in sources:
     connectionType = source[0]
     connectionName = source[1]
-    
+
     if connectionType == "connections-xyz":
         QSettings().setValue(f"qgis/{connectionType}/{connectionName}/authcfg", source[2])
         QSettings().setValue(f"qgis/{connectionType}/{connectionName}/password", source[3])
@@ -175,7 +175,7 @@ for source in sources:
         QSettings().setValue(f"qgis/{connectionType}/{connectionName}/referer", source[3])
         QSettings().setValue(f"qgis/{connectionType}/{connectionName}/zmax", source[4])
         QSettings().setValue(f"qgis/{connectionType}/{connectionName}/zmin", source[5])
-    
+
 
 iface.reloadConnections()
 
