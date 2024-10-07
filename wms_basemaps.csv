@@ -36,3 +36,4 @@ NLCD Land Cover,https://www.mrlc.gov/geoserver/NLCD_Land_Cover/wms,USGS,30,0
 NLCD Shrublands,https://www.mrlc.gov/geoserver/NLCD_Shrubland/wms,USGS,30,0
 EOX Maps,https://tiles.maps.eox.at/wms,EOX,30,0
 Terrascope,https://services.terrascope.be/wms/v2,Terrascope,30,0
+NASA GIBS WMS,https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi,NASA,30,0

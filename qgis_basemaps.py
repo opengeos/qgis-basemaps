@@ -32,7 +32,6 @@ sources.append(['connections-xyz', 'Esri.AntarcticImagery', '', '', 'Earthstar G
 sources.append(['connections-xyz', 'Esri.ArcticImagery', '', '', 'Earthstar Geographics', 'http://server.arcgisonline.com/ArcGIS/rest/services/Polar/Arctic_Imagery/MapServer/tile/{z}/{y}/{x}', '', '30', '0'])
 sources.append(['connections-xyz', 'Esri.ArcticOceanBase', '', '', 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, T', 'http://server.arcgisonline.com/ArcGIS/rest/services/Polar/Arctic_Ocean_Base/MapServer/tile/{z}/{y}/{x}', '', '30', '0'])
 sources.append(['connections-xyz', 'Esri.ArcticOceanReference', '', '', 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, T', 'http://server.arcgisonline.com/ArcGIS/rest/services/Polar/Arctic_Ocean_Reference/MapServer/tile/{z}/{y}/{x}', '', '30', '0'])
-sources.append(['connections-xyz', 'Esri.DeLorme', '', '', 'Tiles (C) Esri -- Copyright: (C)2012 DeLorme', 'https://server.arcgisonline.com/ArcGIS/rest/services/Specialty/DeLorme_World_Base_Map/MapServer/tile/{z}/{y}/{x}', '', '30', '0'])
 sources.append(['connections-xyz', 'Esri.NatGeoWorldMap', '', '', 'Tiles (C) Esri -- National Geographic, Esri, DeLor', 'https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', '', '30', '0'])
 sources.append(['connections-xyz', 'Esri.OceanBasemap', '', '', 'Tiles (C) Esri -- Sources: GEBCO, NOAA, CHS, OSU, ', 'https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Base/MapServer/tile/{z}/{y}/{x}', '', '30', '0'])
 sources.append(['connections-xyz', 'Esri.WorldGrayCanvas', '', '', 'Tiles (C) Esri -- Esri, DeLorme, NAVTEQ', 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', '', '30', '0'])
@@ -58,6 +57,7 @@ sources.append(['connections-xyz', 'JusticeMap.plurality', '', '', 'Justice Map'
 sources.append(['connections-xyz', 'JusticeMap.white', '', '', 'Justice Map', 'https://www.justicemap.org/tile/county/white/{z}/{x}/{y}.png', '', '30', '0'])
 sources.append(['connections-xyz', 'MtbMap', '', '', '(C) OpenStreetMap contributors & USGS', 'http://tile.mtbmap.cz/mtbmap_tiles/{z}/{x}/{y}.png', '', '30', '0'])
 sources.append(['connections-xyz', 'NASAGIBS.ASTER_GDEM_Greyscale_Shaded_Relief', '', '', 'Imagery provided by services from the Global Image', 'https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/ASTER_GDEM_Greyscale_Shaded_Relief/default/GoogleMapsCompatible_Level12/{z}/{y}/{x}.jpg', '', '30', '0'])
+sources.append(['connections-xyz', 'NASAGIBS.BlueMarble', '', '', 'Imagery provided by services from the Global Image', 'https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/BlueMarble_NextGeneration/default/GoogleMapsCompatible_Level8/{z}/{y}/{x}.jpeg', '', '30', '0'])
 sources.append(['connections-xyz', 'NASAGIBS.BlueMarble3031', '', '', 'Imagery provided by services from the Global Image', 'https://gibs.earthdata.nasa.gov/wmts/epsg3031/best/BlueMarble_NextGeneration/default/500m/{z}/{y}/{x}.jpeg', '', '30', '0'])
 sources.append(['connections-xyz', 'NASAGIBS.BlueMarble3413', '', '', 'Imagery provided by services from the Global Image', 'https://gibs.earthdata.nasa.gov/wmts/epsg3413/best/BlueMarble_NextGeneration/default/500m/{z}/{y}/{x}.jpeg', '', '30', '0'])
 sources.append(['connections-xyz', 'NASAGIBS.BlueMarbleBathymetry3031', '', '', 'Imagery provided by services from the Global Image', 'https://gibs.earthdata.nasa.gov/wmts/epsg3031/best/BlueMarble_ShadedRelief_Bathymetry/default/500m/{z}/{y}/{x}.jpeg', '', '30', '0'])
@@ -156,6 +156,7 @@ sources.append(['connections-wms', 'NLCD Land Cover', 'https://www.mrlc.gov/geos
 sources.append(['connections-wms', 'NLCD Shrublands', 'https://www.mrlc.gov/geoserver/NLCD_Shrubland/wms', 'USGS', '30', '0'])
 sources.append(['connections-wms', 'EOX Maps', 'https://tiles.maps.eox.at/wms', 'EOX', '30', '0'])
 sources.append(['connections-wms', 'Terrascope', 'https://services.terrascope.be/wms/v2', 'Terrascope', '30', '0'])
+sources.append(['connections-wms', 'NASA GIBS WMS', 'https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi', 'NASA', '30', '0'])
 
 for source in sources:
     connectionType = source[0]
