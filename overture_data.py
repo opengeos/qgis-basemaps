@@ -1,7 +1,12 @@
+import requests
 from osgeo import ogr
 from qgis.core import QgsProject, QgsVectorLayer
 
-release = "2024-09-18"
+url = "https://labs.overturemaps.org/data/releases.json"
+response = requests.get(url)
+release = response.json().get("latest").split(".")[0]
+print(f"Using release: {release}")
+
 # themes = ["addresses", "base", "buildings", "divisions", "transportation"]
 themes = ["buildings"]
 
